@@ -1,5 +1,7 @@
 "use client";
 
+import LowStockList from "../components/LowStockList";
+import InventoryStats from "../components/InventoryStats";
 import React, { useEffect, useState } from "react";
 import { API_BASE_URL } from "../config";
 import InventoryTable from "../components/InventoryTable";
@@ -45,7 +47,8 @@ export default function DashboardPage() {
             View current inventory and add new items.
           </p>
         </header>
-
+        <InventoryStats items={items} />
+        <LowStockList items={items} />
         <div className="grid gap-6 md:grid-cols-[2fr,1fr] items-start">
           <InventoryTable items={items} loading={loading} error={error} />
           <AddInventoryForm onAdded={handleInventoryAdded} />
