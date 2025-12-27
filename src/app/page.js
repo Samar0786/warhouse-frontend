@@ -109,6 +109,7 @@ export default function DashboardPage() {
             items={filteredItems}
             loading={loading}
             error={error}
+            onRefresh={fetchInventory}
           />
           <AddInventoryForm onAdded={handleInventoryAdded} />
         </div>
